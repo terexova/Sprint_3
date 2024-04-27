@@ -33,6 +33,6 @@ class EntranceLocators:
     PASSWORD_RECOVERY_ENTRANCE_TEXT = (By.XPATH, "//a[text() = 'Войти']")
 
 class ConstructorLocatorsSauce:
-    BULKI = (By.XPATH, "//h2[text() = 'Булки']")
-    SAUCE = (By.XPATH, "//h2[text() = 'Соусы']")
-    NACHINKI = (By.XPATH, "//h2[text() = 'Начинки']")
+    BREAD = (By.XPATH, "//div[./span[text() = 'Булки']]")
+    SAUCE = (By.XPATH, "//div[./span[text() = 'Соусы']]")
+    FILLING = (By.XPATH, "//div[./span[text() = 'Начинки']]")

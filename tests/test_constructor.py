@@ -2,19 +2,23 @@ import settings
 from locators import ConstructorLocatorsSauce
 
 class TestConstructorSauce:
-    def test_constructor(self, driver):
+    def test_constructor_filling(self, driver):
         driver.get(settings.URL)
+        filling = driver.find_element(*ConstructorLocatorsSauce.FILLING)
+        filling.click()
+        assert 'tab_tab_type_current' in filling.get_attribute('class')
 
-        nachinki = driver.find_element(*ConstructorLocatorsSauce.NACHINKI)
-        assert nachinki
-        nachinki.click()
+    def test_constructor_bread(self, driver):
+        driver.get(settings.URL)
+        filling = driver.find_element(*ConstructorLocatorsSauce.FILLING)
+        filling.click()
+        bread = driver.find_element(*ConstructorLocatorsSauce.BREAD)
+        bread.click()
+        assert 'tab_tab_type_current' in bread.get_attribute('class')
 
-        bulki = driver.find_element(*ConstructorLocatorsSauce.BULKI)
-        assert bulki
-        bulki.click()
-
+    def test_constructor_sauce(self, driver):
+        driver.get(settings.URL)
         sauce = driver.find_element(*ConstructorLocatorsSauce.SAUCE)
-        assert sauce
         sauce.click()
-
+        assert 'tab_tab_type_current' in sauce.get_attribute('class')
 
