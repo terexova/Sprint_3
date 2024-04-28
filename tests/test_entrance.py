@@ -20,6 +20,7 @@ class TestEntrance:
 
         entrance_button = driver.find_element(*EntranceLocators.ENTRANCE_BUTTON)
         entrance_button.click()
+        assert driver.current_url == settings.URL + '/login'
 
     def test_entrance_personal_account(self, driver):
         driver.get(settings.URL)
@@ -34,6 +35,7 @@ class TestEntrance:
 
         entrance_button = driver.find_element(*EntranceLocators.ENTRANCE_BUTTON)
         entrance_button.click()
+        assert driver.current_url == settings.URL + '/login'
 
     def test_entrance_in_registration(self, driver):
         driver.get(settings.URL)
@@ -54,6 +56,7 @@ class TestEntrance:
 
         entrance_button = driver.find_element(*EntranceLocators.ENTRANCE_BUTTON)
         entrance_button.click()
+        assert driver.current_url == settings.URL + '/login'
 
     def test_entrance_in_password_recovery(self, driver):
         driver.get(settings.URL)
@@ -74,5 +77,4 @@ class TestEntrance:
 
         entrance_button = driver.find_element(*EntranceLocators.ENTRANCE_BUTTON)
         entrance_button.click()
-
         assert driver.current_url == settings.URL + '/login'
